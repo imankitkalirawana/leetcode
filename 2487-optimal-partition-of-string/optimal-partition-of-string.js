@@ -4,15 +4,17 @@
  */
 var partitionString = function (s) {
     let result = 1;
-    let window = s[0];
+    let seen = new Set();
+    seen.add(s[0]);
 
     for (let i = 1; i < s.length; i++) {
-        if (window.includes(s[i])) {
+        if (seen.has(s[i])) {
             result++;
-            window = s[i];
+            seen.clear();
+            seen.add(s[i]);
         } else {
-            window += s[i];
+            seen.add(s[i]);
         }
     }
-    return result
+    return result;
 };
