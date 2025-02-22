@@ -8,11 +8,7 @@ var kidsWithCandies = function (candies, extraCandies) {
     let result = []
 
     for (let i = 0; i < candies.length; i++) {
-        if (candies[i] + extraCandies >= max) {
-            result.push(true)
-        } else {
-            result.push(false)
-        }
+         result.push(candies[i] + extraCandies >= max);
     }
 
     return result
